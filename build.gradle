@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    jcenter()
+    maven {
+        url 'https://nexus.gluonhq.com/nexus/content/repositories/releases'
+    }
+    maven {
+        url 'https://jitpack.io'
+    }
+    maven {
+        url 'https://apisite.crmyers.dev/maven'
+    }
+}
+
+dependencies {
+    implementation(
+            'com.jfoenix:jfoenix:8.0.10',
+            'org.jetbrains:annotations:20.1.0',
+            'com.opencsv:opencsv:5.5',
+            'com.github.Philipinho:CoinGecko-Java:master-SNAPSHOT'
+    )
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+test {
+    useJUnitPlatform()
+}
